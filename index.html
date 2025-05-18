@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CBT Input Form</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+    form { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #218838; }
+  </style>
+</head>
+<body>
+  <form id="cbtForm">
+    <label>Situación:</label>
+    <textarea name="situacion" required></textarea>
+
+    <label>Pensamiento automático:</label>
+    <textarea name="pensamiento_automatico" required></textarea>
+
+    <label>Emoción (0-100):</label>
+    <input type="number" name="emocion" min="0" max="100" required>
+
+    <label>Evidencia a favor:</label>
+    <textarea name="evidencia_favor" required></textarea>
+
+    <label>Evidencia en contra:</label>
+    <textarea name="evidencia_contra" required></textarea>
+
+    <label>Pensamiento alternativo:</label>
+    <textarea name="pensamiento_alternativo" required></textarea>
+
+    <label>Resultado emocional:</label>
+    <textarea name="resultado_emocional" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    document.getElementById('cbtForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = Object.fromEntries(new FormData(this));
+
+      fetch('https://hook.eu2.make.com/za1no57rw2ojekgswq6xtig2yf4i42ya', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(response => {
+        if (response.ok) {
+          alert('Datos enviados con éxito.');
+          this.reset();
+        } else {
+          alert('Error al enviar datos.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
