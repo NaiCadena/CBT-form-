@@ -1,0 +1,115 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 30px;
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 98%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e1e1e;
+}
+
+
+
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    form {
+        padding: 20px;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    input,
+    textarea,
+    button {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #141414;
+        color: #fff;
+    }
+
+    h1 {
+        color: #fff;
+    }
+
+    form {
+        background: #131416;
+    }
+
+    input,
+    textarea {
+        background-color: #3a3a3a;
+        color: #fff;
+        border: 1px solid #666;
+    }
+
+    button {
+        background: #14F1E3;
+        color: #fff;
+    }
+}

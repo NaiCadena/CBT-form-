@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>CBT Input Form</title>
-  <style>
-    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
-    h1 {
-      text-align: center;
-      color: #333;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    form { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
-    label { display: block; margin-top: 15px; font-weight: bold; }
-    input, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
-    button { margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #218838; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <h1>Recolector de Pensamientos Intrusivos</h1>
 
@@ -47,7 +36,7 @@
   </form>
 
   <script>
-    document.getElementById('cbtForm').addEventListener('submit', function(e) {
+    document.getElementById('cbtForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const data = Object.fromEntries(new FormData(this));
@@ -69,5 +58,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>
